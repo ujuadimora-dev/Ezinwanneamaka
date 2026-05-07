@@ -1,0 +1,62 @@
+:root{
+  /* ORANGE → GOLD */
+  --bs-primary: #d4af37;
+
+  /* GREEN → DEEP BLOOD RED */
+  --bs-secondary: #8b0000;
+
+  /* optional */
+  --bs-success: #8b0000;
+  --bs-warning: #d4af37;
+}
+
+/* test to confirm custom.css is loading */
+
+
+/* force top bar (green) to deep red */
+.bg-secondary {
+    background-color: #8b0000 !important;
+}
+
+/* force menu bar (orange) to gold */
+.bg-primary {
+    background-color: #d4af37 !important;
+}
+
+/* force text colors */
+.text-primary {
+    color: #d4af37 !important;
+}
+
+.text-secondary {
+    color: #8b0000 !important;
+}
+
+/* GREEN BUTTON → DEEP BLOOD RED */
+.btn-success,
+.btn-secondary {
+    background-color: #8b0000 !important;
+    border-color: #8b0000 !important;
+    color: #fff !important;
+}
+
+/* ORANGE BUTTON → GOLD */
+.btn-primary,
+.btn-warning {
+    background-color: #d4af37 !important;
+    border-color: #d4af37 !important;
+    color: #000 !important;
+}
+
+/* OPTIONAL: nicer hover colors */
+.btn-success:hover,
+.btn-secondary:hover {
+    background-color: #600000 !important;
+    border-color: #600000 !important;
+}
+
+.btn-primary:hover,
+.btn-warning:hover {
+    background-color: #b38b1f !important;
+    border-color: #b38b1f !important;
+}
