@@ -658,19 +658,53 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-7 text-center wow fadeIn" data-wow-delay="0.5s">
-                    <h1 class="display-6 mb-4">Subscribe the Newsletter</h1>
-                    <div class="position-relative w-100 mb-2">
-                        <input class="form-control border-0 w-100 ps-4 pe-5" type="text"
-                            placeholder="Enter Your Email" style="height: 60px;">
-                        <button type="button" class="btn btn-lg-square shadow-none position-absolute top-0 end-0 mt-2 me-2"><i
-                                class="fa fa-paper-plane text-primary fs-4"></i></button>
-                    </div>
+
+                    <h1 class="display-6 mb-4">Subscribe to the Newsletter</h1>
+
+                    <!-- Subscribe Form -->
+                    <form id="subscribeForm"
+                        action="https://docs.google.com/forms/d/e/1FAIpQLSd3NCih8xIiZC2xAJ_Dj14NOeMn2GbbMoA3G_1js68qTZvgwg/formResponse"
+                        method="POST" target="hidden_iframe" onsubmit="handleSubmit()">
+
+                        <div class="position-relative w-100 mb-2">
+                            <input class="form-control border-0 w-100 ps-4 pe-5" type="email" name="entry.1531131672"
+                                placeholder="Enter Your Email" required style="height: 60px;">
+
+                            <button type="submit"
+                                class="btn btn-lg-square shadow-none position-absolute top-0 end-0 mt-2 me-2">
+                                <i class="fa fa-paper-plane text-primary fs-4"></i>
+                            </button>
+                        </div>
+                    </form>
+
+                    <!-- Hidden iframe (DO NOT REMOVE) -->
+                    <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
+
                     <p class="mb-0">We keep it relevant, no unnecessary emails.</p>
                 </div>
             </div>
         </div>
     </div>
     <!-- Newsletter End -->
+
+    <script>
+        let submitted = false;
+
+        function handleSubmit() {
+            submitted = true;
+        }
+
+        // Wait for Google Form submission to finish
+        document.getElementById("hidden_iframe").addEventListener("load", function () {
+            if (submitted) {
+                // ✅ LOCAL redirect (works now)
+                window.location.href = "thank-you.html";
+
+                // 🔁 WHEN YOU HOST YOUR SITE, CHANGE TO:
+                // window.location.href = "https://ezinwanneamaka.org/thank-you.html";
+            }
+        });
+    </script>
 
 
     <!-- Footer Start -->
