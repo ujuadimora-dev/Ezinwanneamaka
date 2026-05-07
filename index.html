@@ -247,9 +247,6 @@
                             <span></span>
                         </button>
 
-
-
-
                         <!-- Text -->
                         <h3 class="ms-5 mb-0 text-white">
                             Together, we can uplift lives through sustainable solutions.
@@ -307,25 +304,25 @@
 
     <!-- Video Script -->
     <script>
-document.addEventListener("DOMContentLoaded", function () {
+        document.addEventListener("DOMContentLoaded", function () {
 
-    const videoModal = document.getElementById('videoModal');
-    const videoFrame = document.getElementById('videoFrame');
+            const videoModal = document.getElementById('videoModal');
+            const videoFrame = document.getElementById('videoFrame');
 
-    // When modal opens
-    videoModal.addEventListener('show.bs.modal', function (event) {
-        const button = event.relatedTarget;
-        const videoURL = button.getAttribute('data-src');
-        videoFrame.src = videoURL + "?autoplay=1";
-    });
+            // When modal opens
+            videoModal.addEventListener('show.bs.modal', function (event) {
+                const button = event.relatedTarget;
+                const videoURL = button.getAttribute('data-src');
+                videoFrame.src = videoURL + "?autoplay=1";
+            });
 
-    // When modal closes
-    videoModal.addEventListener('hidden.bs.modal', function () {
-        videoFrame.src = "";
-    });
+            // When modal closes
+            videoModal.addEventListener('hidden.bs.modal', function () {
+                videoFrame.src = "";
+            });
 
-});
-</script>
+        });
+    </script>
 
     <!-- About Start -->
     <div class="container-fluid py-5">
@@ -417,11 +414,11 @@ document.addEventListener("DOMContentLoaded", function () {
                         communities through education, healthcare, and sustainable development. Your support helps us
                         bring smiles, hope, and a brighter future to those in need.</p>
                     <p class="text-dark wow fadeIn" data-wow-delay="0.4s"><i
-                            class="fa fa-check text-primary me-2"></i>Justo magna erat amet</p>
+                            class="fa fa-check text-primary me-2"></i>We empower communities</p>
                     <p class="text-dark wow fadeIn" data-wow-delay="0.5s"><i
-                            class="fa fa-check text-primary me-2"></i>Aliqu diam amet diam et eos</p>
+                            class="fa fa-check text-primary me-2"></i>We create opportunities</p>
                     <p class="text-dark wow fadeIn" data-wow-delay="0.6s"><i
-                            class="fa fa-check text-primary me-2"></i>Clita erat ipsum et lorem et sit</p>
+                            class="fa fa-check text-primary me-2"></i>We inspire change</p>
                     <div class="d-flex mt-4 wow fadeIn" data-wow-delay="0.7s">
                         <a class="btn btn-primary py-3 px-4 me-3" href="">Donate Now</a>
                         <a class="btn btn-secondary py-3 px-4" href="">Join Us Now</a>
@@ -489,7 +486,8 @@ document.addEventListener("DOMContentLoaded", function () {
                                 <a href="#" class="btn btn-sm btn-secondary px-3 position-absolute top-0 end-0">Food</a>
                             </div>
                             <a href="#" class="h3 d-inline-block">Healthy Food</a>
-                            <p>Through your donations and volunteer work, we spread kindness and support to children.
+                            <p>With your support and dedication, we bring hope, care, and opportunities to children in
+                                need.
                             </p>
                             <a href="404.html" class="btn btn-primary w-100 py-3"><i class="fa fa-plus me-2"></i>Donate
                                 Now</a>
@@ -517,10 +515,11 @@ document.addEventListener("DOMContentLoaded", function () {
                                     class="btn btn-sm btn-secondary px-3 position-absolute top-0 end-0">Health</a>
                             </div>
                             <a href="#" class="h3 d-inline-block">Health Support</a>
-                            <p>Through your donations and volunteer work, we spread kindness and support to children.
-                            </p>
-                            <a href="404.html" class="btn btn-primary w-100 py-3"><i class="fa fa-plus me-2"></i>Donate
-                                Now</a>
+                            <p>Through generosity and community service, we help improve the lives of vulnerable
+                                children and women.
+                                <a href="404.html" class="btn btn-primary w-100 py-3"><i
+                                        class="fa fa-plus me-2"></i>Donate
+                                    Now</a>
                         </div>
                     </div>
                 </div>
@@ -923,18 +922,18 @@ document.addEventListener("DOMContentLoaded", function () {
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
     <script>
-document.querySelector('.btn-play').addEventListener('click', function () {
-    const url = this.getAttribute('data-src');
-    document.getElementById('videoFrame').src = url + "?autoplay=1";
-});
-</script>
+        document.querySelector('.btn-play').addEventListener('click', function () {
+            const url = this.getAttribute('data-src');
+            document.getElementById('videoFrame').src = url + "?autoplay=1";
+        });
+    </script>
 
 
-<script>
-document.getElementById('videoModal').addEventListener('hidden.bs.modal', function () {
-    document.getElementById('videoFrame').src = "";
-});
-</script>
+    <script>
+        document.getElementById('videoModal').addEventListener('hidden.bs.modal', function () {
+            document.getElementById('videoFrame').src = "";
+        });
+    </script>
 
 
 

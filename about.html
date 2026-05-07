@@ -157,24 +157,34 @@
     <!-- Page Header End -->
 
 
-    <!-- Video Start -->
+   <!-- Video Start -->
     <div class="container-fluid bg-primary mb-5 wow fadeIn" data-wow-delay="0.1s">
         <div class="container">
             <div class="row g-0">
+
                 <div class="col-lg-11">
                     <div class="h-100 py-5 d-flex align-items-center">
-                        <button type="button" class="btn-play" data-bs-toggle="modal"
-                            data-src="https://www.youtube.com/embed/DWRcNpR6Kdc" data-bs-target="#videoModal">
+
+                        <!-- Play Button -->
+                        <button type="button" class="btn-play" data-bs-toggle="modal" data-bs-target="#videoModal"
+                            data-src="https://player.vimeo.com/video/1189955853">
                             <span></span>
                         </button>
-                        <h3 class="ms-5 mb-0">Together, we can build a world where everyone has the chance to thrive.</h3>
+
+                        <!-- Text -->
+                        <h3 class="ms-5 mb-0 text-white">
+                            Together, we can uplift lives through sustainable solutions.
+                        </h3>
+
                     </div>
                 </div>
+
                 <div class="d-none d-lg-block col-lg-1">
                     <div class="h-100 w-100 bg-secondary d-flex align-items-center justify-content-center">
-                        <span class="text-white" style="transform: rotate(-90deg);">Scroll Down</span>
+                        <span class="text-white" style="transform: rotate(-90deg);"></span>
                     </div>
                 </div>
+
             </div>
         </div>
     </div>
@@ -182,25 +192,61 @@
 
 
     <!-- Video Modal Start -->
-    <div class="modal fade" id="videoModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content rounded-0">
+    <div class="modal fade" id="videoModal" tabindex="-1" aria-labelledby="videoModalLabel" aria-hidden="true">
+
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content border-0 rounded-0">
+
+                <!-- Modal Header -->
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Youtube Video</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <h5 class="modal-title" id="videoModalLabel">
+                        YouTube Video
+                    </h5>
+
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                    </button>
                 </div>
-                <div class="modal-body">
-                    <!-- 16:9 aspect ratio -->
+
+                <!-- Modal Body -->
+                <div class="modal-body p-0">
+
                     <div class="ratio ratio-16x9">
-                        <iframe class="embed-responsive-item" src="" id="video" allowfullscreen allowscriptaccess="always"
-                            allow="autoplay"></iframe>
+
+                        <iframe id="videoFrame" src="" frameborder="0" allow="autoplay; fullscreen; picture-in-picture"
+                            allowfullscreen class="w-100" style="height: 400px;">
+                        </iframe>
+
                     </div>
+
                 </div>
+
             </div>
         </div>
     </div>
     <!-- Video Modal End -->
 
+
+    <!-- Video Script -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+
+            const videoModal = document.getElementById('videoModal');
+            const videoFrame = document.getElementById('videoFrame');
+
+            // When modal opens
+            videoModal.addEventListener('show.bs.modal', function (event) {
+                const button = event.relatedTarget;
+                const videoURL = button.getAttribute('data-src');
+                videoFrame.src = videoURL + "?autoplay=1";
+            });
+
+            // When modal closes
+            videoModal.addEventListener('hidden.bs.modal', function () {
+                videoFrame.src = "";
+            });
+
+        });
+    </script>
 
     <!-- About Start -->
     <div class="container-fluid py-5">
@@ -716,6 +762,21 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+    <script>
+        document.querySelector('.btn-play').addEventListener('click', function () {
+            const url = this.getAttribute('data-src');
+            document.getElementById('videoFrame').src = url + "?autoplay=1";
+        });
+    </script>
+
+
+    <script>
+        document.getElementById('videoModal').addEventListener('hidden.bs.modal', function () {
+            document.getElementById('videoFrame').src = "";
+        });
+    </script>
+
+
 </body>
 
 </html>
