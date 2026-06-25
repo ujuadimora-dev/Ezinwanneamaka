@@ -17,29 +17,28 @@
     <!-- Google Web Fonts --
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@600;700&family=Open+Sans&display=swap" rel="stylesheet">
      Google Web Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap"
+        rel="stylesheet">
 
 
     <!--  Stylesheet of icons -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
-    <!--  Stylesheet of lib -->
-    <link href="lib/animate/animate.min.css" rel="stylesheet">
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-
+    
     <!--  Bootstrap Stylesheet -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="css/custo.css">
 
     <!--  Stylesheet(css) -->
     <link href="css/style.css" rel="stylesheet">
 </head>
 
 <body>
-   <!-- Topmenu Start -->
+    <!-- Topmenu Start -->
 
-   <!-- Topmenu Start -->
+    <!-- Topmenu Start -->
     <div class="container-fluid top-bar py-2">
         <div class="row align-items-center h-100">
 
@@ -171,12 +170,14 @@
         <!-- Heading -->
         <div class="text-center mx-auto mb-5" style="max-width: 720px;">
             <p class="section-title text-primary">Contact Us</p>
+
             <h1 class="display-5">
-                Get in Touch or Join Us as a Volunteer
+                We'd Love to Hear From You
             </h1>
+
             <p>
-                We would love to hear from you. Send us a message if you have a question,
-                want to support our mission, or wish to serve as a volunteer.
+                Whether you have a question, would like to support our mission,
+                or wish to serve as a volunteer, our team is here to help.
             </p>
         </div>
 
@@ -187,6 +188,7 @@
                 <div class="contact-info-card h-100">
 
                     <h3>Let’s Connect</h3>
+
                     <p>
                         Reach out to Ezinwanneamaka Foundation and be part of a mission
                         that brings hope, care and support to communities.
@@ -196,7 +198,7 @@
                         <i class="fa fa-map-marker-alt"></i>
                         <div>
                             <h5>Our Office</h5>
-                            <span>40 Ezinwanne Street, Ireland</span>
+                            <span>Lundtoftegade 25, 1- St Copenhagen Denmark 2200</span>
                         </div>
                     </div>
 
@@ -217,19 +219,32 @@
                     </div>
 
                     <div class="contact-social">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-x-twitter"></i></a>
-                        <a href="https://www.youtube.com/@Ezinwanneamakafoundation" target="_blank">
+                        <a href="#" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+
+                        <a href="#" aria-label="X Twitter">
+                            <i class="fab fa-x-twitter"></i>
+                        </a>
+
+                        <a href="https://www.youtube.com/@Ezinwanneamakafoundation"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           aria-label="YouTube">
                             <i class="fab fa-youtube"></i>
                         </a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+
+                        <a href="#" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
                     </div>
 
                     <div class="contact-map">
                         <iframe
                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d238099.4749392729!2d-6.472519!3d53.324320!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48670e0ddf0b0e0f%3A0x2603c7f6dadf1a9!2sDublin%2C%20Ireland!5e0!3m2!1sen!2sie!4v1700000000000"
                             allowfullscreen=""
-                            loading="lazy">
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade">
                         </iframe>
                     </div>
 
@@ -241,13 +256,15 @@
                 <div class="contact-form-card h-100">
 
                     <h3>Send Us a Message</h3>
+
                     <p>
                         Fill the form below and we will get back to you as soon as possible.
                     </p>
 
-                    <form action="https://docs.google.com/forms/d/e/1FAIpQLSf7egLooPv3gddARFLI7Ghp2XVUiDHUndZmHEOPah8SQhoD1w/formResponse"
+                    <form id="contactForm"
+                          action="https://docs.google.com/forms/d/e/1FAIpQLSf7egLooPv3gddARFLI7Ghp2XVUiDHUndZmHEOPah8SQhoD1w/formResponse"
                           method="POST"
-                          target="_blank">
+                          target="hidden_contact_iframe">
 
                         <div class="row g-4">
 
@@ -305,9 +322,21 @@
                                 </button>
                             </div>
 
+                            <div class="col-12">
+                                <p id="contactSuccessMessage" class="contact-success-message">
+                                    Sending your message...
+                                </p>
+                            </div>
+
                         </div>
 
                     </form>
+
+                    <!-- Hidden iframe for Google Form submission -->
+                    <iframe name="hidden_contact_iframe"
+                            id="hidden_contact_iframe"
+                            style="display:none;">
+                    </iframe>
 
                 </div>
             </div>
@@ -317,6 +346,18 @@
     </div>
 </div>
 <!-- Contact End -->
+
+
+<!-- Contact Form Redirect Script -->
+<script>
+document.getElementById("contactForm").addEventListener("submit", function () {
+    document.getElementById("contactSuccessMessage").style.display = "block";
+
+    setTimeout(function () {
+        window.location.href = "thanks-you.html";
+    }, 2000);
+});
+</script>
     <!-- Newsletter Start -->
     <div class="container-fluid bg-primary py-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
         <div class="container">
@@ -371,13 +412,13 @@
     </script>
 
 
-     <!-- Footer Start -->
+    <!-- Footer Start -->
     <div class="container-fluid footer py-5 wow fadeIn" data-wow-delay="0.1s">
         <div class="container">
             <div class="row g-5 py-5">
                 <div class="col-lg-3 col-md-6">
                     <h4 class="text-light mb-4">Our Office</h4>
-                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>40 Ezinwanne Street, Ireland</p>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Lundtoftegade 25, 1- St Copenhagen Denmark 2200</p>
                     <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+353(89)976 6595</p>
                     <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@ezinwanneamaka.org</p>
                     <div class="d-flex pt-3">
@@ -402,11 +443,11 @@
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <h4 class="text-light mb-4">Quick Links</h4>
-                    <a class="btn btn-link" href="">About Us</a>
-                    <a class="btn btn-link" href="">Contact Us</a>
-                    <a class="btn btn-link" href="">Our Services</a>
-                    <a class="btn btn-link" href="">Terms & Condition</a>
-                    <a class="btn btn-link" href="">Support</a>
+                    <a class="btn btn-link" href="about.html">About Us</a>
+                    <a class="btn btn-link" href="contact.html">Contact Us</a>
+                    <a class="btn btn-link" href="privacy-policy.html">Privacy Policy</a>
+                    <a class="btn btn-link" href="terms-and-conditions.html">Terms & Condition</a>
+                    <a class="btn btn-link" href="donation.html">Donate</a>
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <h4 class="text-light mb-4">Business Hours</h4>
@@ -418,85 +459,117 @@
                     <h6 class="text-light">Closed</h6>
                 </div>
                 <!-- Donation Support -->
-<div class="col-lg-3 col-md-6">
+                <div class="col-lg-3 col-md-6">
 
-    <h4 class="text-light mb-4">
-        Support Our Mission
-    </h4>
+                    <h4 class="text-light mb-4">
+                        Support Our Mission
+                    </h4>
 
-    <div class="footer-donation-box">
+                    <div class="footer-donation-box">
 
-        <img src="img/donation-box.jpg"
-             alt="Donate">
+                        <img src="img/donation-box.jpg" alt="Donate">
 
-        <h5>
-            Every Donation Makes
-            A Difference
-        </h5>
+                        <h5>
+                            Every Donation Makes
+                            A Difference
+                        </h5>
 
-        <p>
-            Help us provide education, healthcare,
-            welfare support and hope to vulnerable
-            children and families.
-        </p>
+                        <p>
+                            Help us provide education, healthcare,
+                            welfare support and hope to vulnerable
+                            children and families.
+                        </p>
 
-        <a href="donation.html"
-           class="btn btn-footer-donate">
-            Donate Now
-        </a>
+                        <a href="donation.html" class="btn btn-footer-donate">
+                            Donate Now
+                        </a>
 
-    </div>
-
-</div>
-            <div class="copyright pt-5">
-                <div class="row">
-                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                        &copy; <a class="fw-semi-bold" href="#">www.ezinwanneamka.com</a>, All Right Reserved.
                     </div>
-                    <div class="col-md-6 text-center text-md-end">
-                        <!--/*** The author’s attribution link must remain intact in the template. ***/-->
-                        <!--/*** If you wish to remove this credit link, please purchase the Pro Version . ***/-->
-                         <a class="fw-semi-bold" href="https://htmlcodex.com"></a>
+
+                </div>
+                <div class="copyright pt-5">
+                    <div class="row">
+                        <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                            &copy; <a class="fw-semi-bold" href="#">www.ezinwanneamka.com</a>, All Right Reserved.
+                        </div>
+                        <div class="col-md-6 text-center text-md-end">
+                            <!--/*** The author’s attribution link must remain intact in the template. ***/-->
+                            <!--/*** If you wish to remove this credit link, please purchase the Pro Version . ***/-->
+                            <a class="fw-semi-bold" href="https://htmlcodex.com"></a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- Footer End -->
+        <!-- Footer End -->
 
 
-    <!-- Back to Top -->
-    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
 
 
-  
 
 
-    <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/wow/wow.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/waypoints/waypoints.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-    <script src="lib/counterup/counterup.min.js"></script>
 
-    <!-- Template Javascript -->
-    <script src="js/main.js"></script>
+        <!-- JavaScript Libraries -->
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+        
+        
+        <!-- Template Javascript -->
+        <script src="js/script.js"></script>
 
-     <script>
-        document.querySelector('.btn-play').addEventListener('click', function () {
-            const url = this.getAttribute('data-src');
-            document.getElementById('videoFrame').src = url + "?autoplay=1";
-        });
-    </script>
+        <script>
+            document.querySelector('.btn-play').addEventListener('click', function () {
+                const url = this.getAttribute('data-src');
+                document.getElementById('videoFrame').src = url + "?autoplay=1";
+            });
+        </script>
 
 
-    <script>
-        document.getElementById('videoModal').addEventListener('hidden.bs.modal', function () {
-            document.getElementById('videoFrame').src = "";
-        });
-    </script>
+        <script>
+            document.getElementById('videoModal').addEventListener('hidden.bs.modal', function () {
+                document.getElementById('videoFrame').src = "";
+            });
+        </script>
+
+        <div id="cookie-banner" class="cookie-banner">
+    <p>
+        We use cookies to improve your experience and analyze website traffic.
+        <a href="cookie-policy.html">Cookie Policy</a>
+    </p>
+
+    <button onclick="acceptCookies()">Accept</button>
+</div>
+
+<script>
+function loadGoogleAnalytics() {
+    let script = document.createElement("script");
+    script.async = true;
+    script.src = "https://www.googletagmanager.com/gtag/js?id=G-903VWWS4HM";
+    document.head.appendChild(script);
+
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    window.gtag = gtag;
+
+    gtag("js", new Date());
+    gtag("config", "G-903VWWS4HM");
+}
+
+function acceptCookies() {
+    localStorage.setItem("cookiesAccepted", "yes");
+    document.getElementById("cookie-banner").style.display = "none";
+    loadGoogleAnalytics();
+}
+
+window.addEventListener("load", function () {
+    if (localStorage.getItem("cookiesAccepted") === "yes") {
+        document.getElementById("cookie-banner").style.display = "none";
+        loadGoogleAnalytics();
+    }
+});
+</script>
 </body>
 
 </html>
